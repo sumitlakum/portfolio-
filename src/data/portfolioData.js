@@ -8,6 +8,7 @@ export const personalInfo = {
   email: "sumitlakum123@gmail.com",
   linkedin: "https://www.linkedin.com/in/sumitlakum09/",
   github: "https://github.com/sumitlakum",
+  resumeDownloadUrl: "https://drive.google.com/uc?export=download&id=1-0ZGCq9ovFn8Iwd6t4-Amb6739s6mJPK",
   avatarUrl: "/profile.jpg",
   greeting: "Ohh you found me?. Howdy!",
   intro: "Hey! Thank you for visiting my personal site! I am a Software Engineer with 2+ years of experience specializing in building scalable backend systems, full-stack web applications, and production AI capabilities across HealthTech, Real Estate, and EdTech.",

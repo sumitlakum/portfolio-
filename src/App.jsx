@@ -13,10 +13,6 @@ export default function App() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const handlePrintResume = () => {
-    setIsResumeOpen(true);
-  };
-
   return (
     <div className="bg-[#0b0e14] text-slate-200 min-h-screen font-sans selection:bg-cyan-500 selection:text-black relative">
       
@@ -28,13 +24,16 @@ export default function App() {
         </div>
 
         <div className="flex items-center gap-2">
-          <button
-            onClick={handlePrintResume}
-            className="px-2.5 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-cyan-400 text-xs font-mono flex items-center gap-1"
+          <a
+            href={personalInfo.resumeDownloadUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            download
+            className="px-2.5 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-cyan-400 text-xs font-mono flex items-center gap-1 hover:bg-cyan-500 hover:text-black transition-colors"
           >
             <Download className="w-3.5 h-3.5" />
             CV
-          </button>
+          </a>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-1.5 rounded-lg bg-slate-900 border border-slate-700 text-slate-200"
@@ -54,6 +53,18 @@ export default function App() {
             <a href="#works-sec" onClick={() => setMobileMenuOpen(false)} className="px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-200">Works</a>
             <a href="#education-sec" onClick={() => setMobileMenuOpen(false)} className="px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-200">Education</a>
             <a href="#contact-sec" onClick={() => setMobileMenuOpen(false)} className="px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-200">Contact</a>
+            
+            <a
+              href={personalInfo.resumeDownloadUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+              className="w-full text-center py-2.5 rounded-xl border border-cyan-500/80 text-cyan-300 font-bold text-xs flex items-center justify-center gap-2"
+            >
+              <Download className="w-3.5 h-3.5" />
+              Download Resume (PDF)
+            </a>
+
             <a
               href={`mailto:${personalInfo.email}`}
               className="w-full text-center py-2.5 rounded-xl bg-cyan-400 text-black font-extrabold text-xs"
@@ -118,13 +129,16 @@ export default function App() {
                 Get in touch!
               </a>
 
-              <button
-                onClick={handlePrintResume}
-                className="w-full sm:w-auto text-center px-5 py-3 rounded-xl border border-slate-700 hover:border-slate-500 text-slate-200 font-bold text-xs transition-all bg-slate-900/60 flex items-center justify-center gap-2"
+              <a
+                href={personalInfo.resumeDownloadUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                download
+                className="w-full sm:w-auto text-center px-5 py-3 rounded-xl border border-slate-700 hover:border-cyan-400 text-slate-200 font-bold text-xs transition-all bg-slate-900/60 flex items-center justify-center gap-2 hover:text-cyan-300"
               >
                 <Download className="w-3.5 h-3.5 text-cyan-400" />
                 Download Resume
-              </button>
+              </a>
             </div>
 
             {/* Social Links */}
@@ -170,13 +184,16 @@ export default function App() {
                 <a href="#education-sec" className="text-slate-300 hover:text-cyan-400 transition-colors">Education</a>
                 <a href="#contact-sec" className="text-slate-300 hover:text-cyan-400 transition-colors">Contact</a>
               </nav>
-              <button
-                onClick={handlePrintResume}
+              <a
+                href={personalInfo.resumeDownloadUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                download
                 className="p-2 rounded-full border border-slate-700 text-slate-300 hover:text-cyan-400 hover:border-cyan-400 transition-colors"
-                title="Download Resume"
+                title="Download Resume PDF"
               >
                 <Download className="w-3.5 h-3.5" />
-              </button>
+              </a>
             </header>
 
             {/* SECTION 1: WHAT I DO */}
@@ -393,6 +410,17 @@ export default function App() {
                   className="text-center px-6 py-3.5 rounded-xl bg-cyan-400 hover:bg-cyan-300 text-black font-extrabold text-xs transition-all shadow-lg shadow-cyan-500/20"
                 >
                   Say Hi via Email ({personalInfo.email})
+                </a>
+
+                <a
+                  href={personalInfo.resumeDownloadUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                  className="text-center px-6 py-3.5 rounded-xl bg-slate-900 border border-slate-700 text-slate-200 hover:text-cyan-400 font-bold text-xs transition-all flex items-center justify-center gap-2"
+                >
+                  <Download className="w-4 h-4 text-cyan-400" />
+                  Download Resume (PDF)
                 </a>
 
                 <a
